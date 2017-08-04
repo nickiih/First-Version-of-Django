@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Women Empowerment</title>
+  <head>
+
+
+  <body>
+    <div>
+      {{products}}
+      {% for product in products %}
+      <div id="Eat" class="w3-container menu w3-padding-48 w3-card-2">
+        <h5 class="w3-tag w3-wide">{{ product.Product }}</h5>
+        <p class="w3-text-grey">{{ product.Product_Description }}<p>
+        <p>Seller:{{ product.First_Name}} {{ product.Last_Name }}</p>
+        <p>Location:{{ product.Country }}</p>
+        <p>Price ($): {{ product.Price_in_Dollars }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
