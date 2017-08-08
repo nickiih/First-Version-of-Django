@@ -1,0 +1,80 @@
+<html>
+<head>
+  <style>
+    .fieldWrapper {
+      padding: 15px;
+    }
+
+    .displaymiddle {
+      text-align: middle;
+    }
+
+    .w3-display-container {
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+{% extends 'Empowerment/base.html' %}
+
+{% block content %}
+
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-orange">
+    <div class="w3-col s3">
+      <a class="w3-display-middle" "w3-button w3-block w3-purple">ADD A NEW PRODUCT</a>
+      <br></br>
+    </div>
+
+  </div>
+</div>
+<div class="w3-display-container">
+<br></br>
+    <h1 class="w3-display-middle">Add a New Product:</h1></div>
+<br></br>
+<div class="w3-display-container">
+    <form method="POST" class="product-form w3-display-middle">{% csrf_token %}
+      {{ form.non_field_errors }}
+    <div class="fieldWrapper displaymiddle">
+      {{ form.First_Name.errors }}
+      <label for="{{ form.subject.id_for_label }}">First Name:</label>
+      <br>
+      {{ form.First_Name }}<br>
+    </div>
+
+    <div class="fieldWrapper displaymiddle">
+      {{ form.Last_Name.errors }}
+      <label for="{{ form.subject.id_for_label }}">Last Name:</label>
+      <br>
+      {{ form.Last_Name }}
+    </div>
+
+    <div class="fieldWrapper">
+      {{ form.Country.errors }}
+      <label for="{{ form.subject.id_for_label }}">Country:</label>
+      <br>
+      {{ form.Country }}
+    </div>
+
+    <div class="fieldWrapper">
+      {{ form.Product.errors }}
+      <label for="{{ form.subject.id_for_label }}">Product:</label>
+      <br>
+      {{ form.Product }}
+    </div>
+
+    <div class="fieldWrapper">
+      {{ form.Product_Description.errors }}
+      <label for="{{ form.subject.id_for_label }}">Product Description:</label>
+      <br>
+      {{ form.Product_Description }}
+    </div>
+
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form></div>
+{% endblock %}
+
+</body>
+</html>

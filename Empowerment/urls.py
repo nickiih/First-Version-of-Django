@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^$', views.product_list, name='product_list'),
     url(r'^product/new/$', views.product_new, name='product_new'),
     url(r'^product/(?P<pk>\d+)/edit/$', views.product_edit, name='product_edit'),
+    url(r'^Women-Empowerment$', views.original_page, name='original_page'),
 ]
